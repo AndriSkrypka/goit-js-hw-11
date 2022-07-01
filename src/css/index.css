@@ -1,0 +1,58 @@
+body {
+    font-family: cursive;
+    background-color: grey;
+}
+
+a {
+    color: rgb(90, 88, 88);
+}
+
+img {
+    display: block;
+    width: 100%;
+
+    object-fit: cover;
+}
+
+
+.gallery {
+    justify-content: space-around;
+    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.photo-card-gallary {
+    width: calc((100% / 4)- 60px);
+    position: relative;
+    background-color: rgb(197, 196, 196);
+    overflow: hidden;
+
+}
+
+.photo-card-gallary:hover {
+    transform: scale(1.1);
+}
+
+.info-gallary {
+    display: flex;
+
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+
+}
+
+input {
+    width: 300px;
+    height: 20px;
+    border-radius: 20px;
+
+}
+
+button {
+    border-radius: 20px;
+}
