@@ -13,7 +13,7 @@ const options = {
   threshold: 1.0,
 };
 
-const observe = new IntersectionObserver(generateImg, options);
+const observer = new IntersectionObserver(generateImg, options);
 
 form.addEventListener('submit', submit);
 
@@ -26,21 +26,26 @@ function submit(event) {
   onInput = event.target.searchQuery.value;
 
   wrapGallery.innerHTML = '';
-  observe.unobserve(target);
+  observer.unobserve(target);
 
   if (!onInput) {
     Notiflix.Notify.failure('Please, search any picture!');
     return;
   }
+
+  page = 1;
+
   fetchImg(onInput, page).then(response => {
     if (!response.data.total) {
       Notiflix.Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
       return;
+    } else if (response.data.hits.lengts <= 40) {
+      observer.unobserve(target);
     } else {
       createMarkup(response.data.hits);
-      observe.observe(target);
+      observer.observe(target);
     }
     Notiflix.Notify.success(`Hooray! We found ${response.data.total} images.`);
   });

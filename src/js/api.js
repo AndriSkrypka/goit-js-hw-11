@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import Notiflix from 'notiflix';
 export default async function fetchImg(value, page) {
   try {
     const response = await axios({

@@ -5,6 +5,7 @@ body {
 
 a {
     color: rgb(90, 88, 88);
+    text-decoration: none;
 }
 
 img {
@@ -16,15 +17,14 @@ img {
 
 
 .gallery {
-    justify-content: space-around;
-    padding: 30px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
 .photo-card-gallary {
-    width: calc((100% / 4)- 60px);
+    width: calc((100% / 3)- 90px);
     position: relative;
     background-color: rgb(197, 196, 196);
     overflow: hidden;
@@ -32,27 +32,28 @@ img {
 }
 
 .photo-card-gallary:hover {
-    transform: scale(1.1);
+    transform: scale(1.06);
 }
 
-.info-gallary {
+/* .info-gallary {
     display: flex;
 
-}
 
-.search-form {
+} */
+
+/* .search-form {
     display: flex;
     justify-content: center;
 
-}
+} */
 
-input {
+/* input {
     width: 300px;
     height: 20px;
     border-radius: 20px;
 
-}
+} */
 
-button {
+/* button {
     border-radius: 20px;
-}
+} */
